@@ -1,0 +1,36 @@
+---
+title: "Tutorial Repro"
+author: "Linus"
+repro:
+  scripts:
+    - R/prepare_data.R
+  data:
+    xy: data/data.csv
+  packages:
+    - tidyverse
+    - aaronpeikert/repro@adb5fa569
+output: html_document
+---
+
+# Note
+
+This document was created from the commit with the hash: ``r repro::current_hash()``.   
+
+# Setup
+
+```{r}
+library(repro)
+automate_load_packages()
+automate_load_scripts()
+xy <- automate_load_data(xy, read_csv)
+```
+
+# Analysis
+
+```{r}
+xy %>% 
+  ggplot(aes(x, y)) + 
+  geom_point() + 
+  theme_minimal()
+```
+
