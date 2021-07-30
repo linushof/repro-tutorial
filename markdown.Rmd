@@ -10,7 +10,7 @@ repro:
   packages:
     - tidyverse
     - aaronpeikert/repro@adb5fa569
-    - kable
+    - knitr
 output: html_document
 ---
 
