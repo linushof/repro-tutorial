@@ -1,5 +1,5 @@
 RUN install2.r --error --skipinstalled \ 
-  kable \ 
+  knitr \ 
   tidyverse
 RUN installGithub.r \ 
   aaronpeikert/repro@adb5fa569
