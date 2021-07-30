@@ -4,28 +4,47 @@ author: "Linus"
 repro:
   scripts:
     - R/prepare_data.R
+    - R/fun_cumulative.R
   data:
     xy: data/data.csv
   packages:
     - tidyverse
     - aaronpeikert/repro@adb5fa569
+    - kable
 output: html_document
 ---
 
-# Note
+```{r setup, echo = FALSE}
 
-This document was created from the commit with the hash: ``r repro::current_hash()``.   
+library(repro) 
 
-# Setup
-
-```{r}
-library(repro)
-automate_load_packages()
-automate_load_scripts()
-xy <- automate_load_data(xy, read_csv)
+# register external scripts and load packages and data (see YAML) 
+automate_load_scripts() # to run R code in external scripts
+automate_load_packages() # to execute chunks with R code
+xy <- automate_load_data(xy, read_csv) 
 ```
 
+# Note
+
+This document was created from the commit with the hash ``r repro::current_hash()``.
+
 # Analysis
+
+```{r fun_cumulative}
+# writes function to compute cumulative sums
+```
+
+## Stats
+
+```{r}
+# compute cumulative sums over y and print first 6 observations
+xy %>% 
+  mutate(y_cum = cumsum2(y)) %>% 
+  head() %>% 
+  kable()
+```
+
+## Plots
 
 ```{r}
 xy %>% 
@@ -33,4 +52,3 @@ xy %>%
   geom_point() + 
   theme_minimal()
 ```
-

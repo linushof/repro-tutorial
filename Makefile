@@ -2,7 +2,7 @@ PROJECT := reprotutorial
 WORKDIR := $(CURDIR)
 
 # list below your targets and their recipies
-markdown.html: markdown.Rmd data/data.csv
+markdown.html: markdown.Rmd data/data.csv R/fun_cumulative.R
 	Rscript -e 'rmarkdown::render("markdown.Rmd")'
 	
 data/data.csv: R/prepare_data.R
