@@ -1,8 +1,8 @@
+# Attribution 4.0 International
+
 Copyright (c) 2021 Aaron Peikert, Caspar J. Van Lissa & Andreas Brandmaier
 
-[aaronpeikert/repro-tutorial (github.com)](https://github.com/aaronpeikert/repro-tutorial)
-
-Attribution 4.0 International
+[aaronpeikert/repro-tutorial (github.com)](https://github.com/aaronpeikert/repro-tutorial
 
 =======================================================================
 
