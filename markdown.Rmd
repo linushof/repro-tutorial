@@ -14,9 +14,12 @@ repro:
 output: html_document
 ---
 
-```{r setup, echo = FALSE}
-
+```{r}
 library(repro) 
+```
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 
 # register external scripts and load packages and data (see YAML) 
 automate_load_scripts() # to run R code in external scripts
@@ -24,17 +27,17 @@ automate_load_packages() # to execute chunks with R code
 xy <- automate_load_data(xy, read_csv) 
 ```
 
-# Note
-
-This document was created from the commit with the hash ``r repro::current_hash()``.
-
 # Analysis
+
+Write functions for computing cumulative sums (means) and replacing `NAs` with the lagging value.
 
 ```{r fun_cumulative}
 # writes function to compute cumulative sums
 ```
 
 ## Stats
+
+Compute cumulative sums over y:
 
 ```{r}
 # compute cumulative sums over y and print first 6 observations
@@ -45,6 +48,8 @@ xy %>%
 ```
 
 ## Plots
+
+Show scatter plot of x and y:
 
 ```{r}
 xy %>% 
