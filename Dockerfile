@@ -8,6 +8,7 @@ RUN MRAN=https://mran.microsoft.com/snapshot/${BUILD_DATE} \
   && export MRAN=$MRAN \
   && echo "options(repos = c(CRAN='$MRAN'), download.file.method = 'libcurl')" >> /usr/local/lib/R/etc/Rprofile.site
 RUN install2.r --error --skipinstalled \ 
+  kable \ 
   tidyverse
 RUN installGithub.r \ 
   aaronpeikert/repro@adb5fa569
